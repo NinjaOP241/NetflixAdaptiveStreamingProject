@@ -1,6 +1,6 @@
-import express from 'express';
-import cors from 'cors';
-import { config } from './config';
+import express from "express";
+import cors from "cors";
+import { config } from "./config";
 
 const app = express();
 
@@ -12,11 +12,11 @@ app.use(
 
 app.use(express.json());
 
-app.get('/health', (_req, res) => {
+app.get("/health", (_req, res) => {
   res.json({
-    status: 'ok',
+    status: "ok",
     mediaRoot: config.mediaRoot,
-    implementation: 'starter',
+    implementation: "starter",
   });
 });
 
