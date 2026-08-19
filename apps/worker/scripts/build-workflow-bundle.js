@@ -2,6 +2,10 @@ const { bundleWorkflowCode } = require("@temporalio/worker");
 const { writeFile } = require("fs/promises");
 const path = require("path");
 
+/**
+ * In production, we can bundle all workflows into a single file in advance.
+ * Helpful for reducing Worker startup time in production.
+ */
 async function build() {
   const { code } = await bundleWorkflowCode({
     workflowsPath: path.join(__dirname, "../src/workflows"),
